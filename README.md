@@ -33,6 +33,7 @@ I am about to use `react` and `graphql` to build this feature with the following
 - `graphql-codegen` for generating types from graphql queries
 - `apollo-client` for fetching data from the mocked graphql server
 - `chakra-ui` for styling
+- Use `flex` to layout the page, and use `grid` to display the hotel data
 - `prettier` and `eslint` for code formatting and linting
 
 ## Tasks
@@ -50,3 +51,7 @@ I am about to use `react` and `graphql` to build this feature with the following
   - [ ] Use grid to display the hotel data
   - [ ] Support mobile design
 - [ ] Implement the sorting functionality
+
+## Notes
+
+- Put original vite readme in `doc/original-vite-readme.md`
