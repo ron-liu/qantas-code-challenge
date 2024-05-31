@@ -1,0 +1,60 @@
+type Query {
+  hotels(sortBy: SortBy): [Hotel]
+}
+
+enum SortBy {
+  PRICE_HIGH_TO_LOW
+  PRICE_LOW_TO_HIGH
+}
+
+type Hotel {
+  id: String
+  property: Property
+  offer: Offer
+}
+
+type Property {
+  propertyId: String
+  title: String
+  address: [String]
+  previewImage: PreviewImage
+  rating: Rating
+}
+
+type PreviewImage {
+  url: String
+  caption: String
+  imageType: String
+}
+
+type Rating {
+  ratingValue: Float
+  ratingType: String
+}
+
+type Offer {
+  promotion: Promotion
+  name: String
+  displayPrice: DisplayPrice
+  savings: Savings
+  cancellationOption: CancellationOption
+}
+
+type Promotion {
+  title: String
+  type: String
+}
+
+type DisplayPrice {
+  amount: Float
+  currency: String
+}
+
+type Savings {
+  amount: Float
+  currency: String
+}
+
+type CancellationOption {
+  cancellationType: String
+}
