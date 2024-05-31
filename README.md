@@ -4,6 +4,17 @@
 
 This project is a code challenge for Qantas Group Accommodation. The challenge is to build a feature that allows users to see a list of hotels that can be sorted by price. See more details on the [instructions](doc/instructions.md). Also see the [mockup page](doc/mockup.png) provided.
 
+## How to run the app
+
+```bash
+brew install pnpm   # if you don't have pnpm installed
+```
+
+```bash
+pnpm install
+pnpm dev
+```
+
 ## User Story: Implement Hotel Sorting Feature on Qantas Hotels Search Page
 
 ### Description
@@ -27,6 +38,7 @@ As a user of Qantas Hotels I would like to see a list of hotels that can be sort
 
 I am about to use `react` and `graphql` to build this feature with the following tools / packages:
 
+- `pnpm` for package management
 - `vite` for react
 - `jest` and `react-testing-library` for testing
 - `msw` for mocking Graphql requests
@@ -51,6 +63,14 @@ I am about to use `react` and `graphql` to build this feature with the following
   - [ ] Use grid to display the hotel data
   - [ ] Support mobile design
 - [ ] Implement the sorting functionality
+
+## Trade-offs
+
+- I use graphql instead of REST API
+  - Show my knowledge of graphql since Qantas is using graphql
+  - A bit complex but not too much
+    - Need to write graphql schema but save time for typescript types via graphql-codegen
+    - Need to introduce apollo but can leave `react-query` out
 
 ## Notes
 
