@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import { ChakraBaseProvider } from "@chakra-ui/react";
 import { ApolloProvider } from "@apollo/client/react";
+
+import App from "./App.tsx";
 import client from "./tools/apollo-client.ts";
+import theme from "./theme.ts";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
@@ -18,12 +21,14 @@ async function enableMocking() {
   });
 }
 
-enableMocking().then(() =>
+enableMocking().then(() => {
   ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
       <ApolloProvider client={client}>
-        <App />
+        <ChakraBaseProvider theme={theme}>
+          <App />
+        </ChakraBaseProvider>
       </ApolloProvider>
     </React.StrictMode>
-  )
-);
+  );
+});

@@ -50,11 +50,11 @@ I am about to use `react` and `graphql` to build this feature with the following
 
 ## Tasks
 
-- [ ] Setup the project with `vite` and `react`
-- [ ] Create the graphql schema
-- [ ] Create the graphql server with `msw` with the sorting functionality and the sample data
-- [ ] Fetch data from the graphql server with `apollo-client`
-- [ ] Implement the hook to fetch the hotel data and the sorting functionality
+- [x] Setup the project with `vite` and `react`
+- [x] Create the graphql schema
+- [x] Create the graphql server with `msw` with the sorting functionality and the sample data
+- [x] Fetch data from the graphql server with `apollo-client`
+- [x] Implement the hook to fetch the hotel data and the sorting functionality
 - [ ] Implement the page layout
   - [ ] For desktop / tablet: put the content in the center with 1200px width
   - [ ] For mobile: put the content in the center with 100% width

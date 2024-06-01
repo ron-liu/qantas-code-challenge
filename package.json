@@ -12,6 +12,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "framer-motion": "^11.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -21,8 +25,8 @@
     "@graphql-codegen/typescript-operations": "^4.2.1",
     "@graphql-codegen/typescript-react-apollo": "^4.3.0",
     "@types/node": "^20.13.0",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
