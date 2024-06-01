@@ -40,7 +40,7 @@ I am about to use `react` and `graphql` to build this feature with the following
 
 - `pnpm` for package management
 - `vite` for react
-- `jest` and `react-testing-library` for testing
+- `vitest` and `react-testing-library` for testing
 - `msw` for mocking Graphql requests
 - `graphql-codegen` for generating types from graphql queries
 - `apollo-client` for fetching data from the mocked graphql server
@@ -55,9 +55,9 @@ I am about to use `react` and `graphql` to build this feature with the following
 - [x] Create the graphql server with `msw` with the sorting functionality and the sample data
 - [x] Fetch data from the graphql server with `apollo-client`
 - [x] Implement the hook to fetch the hotel data and the sorting functionality
-- [ ] Implement the page layout
-  - [ ] For desktop / tablet: put the content in the center with 1200px width
-  - [ ] For mobile: put the content in the center with 100% width
+- [x] Implement the page layout
+  - [x] For desktop / tablet: put the content in the center with 1200px width
+  - [x] For mobile: put the content in the center with 100% width
 - [ ] Implement the UI to display the hotel data
   - [ ] Create rating component to display the ratings
   - [ ] Use grid to display the hotel data

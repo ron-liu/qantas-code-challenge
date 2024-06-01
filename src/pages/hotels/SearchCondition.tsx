@@ -24,7 +24,12 @@ export const SearchCondition: React.FC<SearchConditionProps> = ({
           Sydney
         </Text>
       </Text>
-      <Select value={sortBy} onChange={handleChange} maxW={200}>
+      <Select
+        value={sortBy}
+        onChange={handleChange}
+        maxW={200}
+        data-testid="sort-select"
+      >
         <option value={"PRICE_HIGH_TO_LOW"}>Price high-low</option>
         <option value={"PRICE_LOW_TO_HIGH"}>Price low-high</option>
       </Select>

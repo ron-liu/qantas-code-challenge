@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
@@ -9,5 +10,10 @@ export default defineConfig({
       // Allow serving files from one level up to the project root
       allow: [".."],
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: ["./src/setupTests.js"], // if you want a setup file
   },
 });
