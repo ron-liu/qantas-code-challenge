@@ -1,0 +1,18 @@
+query GetHotels($sortBy: SortBy) {
+  hotels(sortBy: $sortBy) {
+    id
+    property {
+      title
+      rating {
+        ratingValue
+      }
+    }
+    offer {
+      name
+      displayPrice {
+        amount
+        currency
+      }
+    }
+  }
+}

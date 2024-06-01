@@ -1,0 +1,14 @@
+overwrite: true
+schema: "graphql/schema.graphql" # Adjust this path
+documents: "src/**/*.graphql"
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+      withHooks: true
+      withComponent: false
+      withHOC: false
+      enumsAsTypes: true

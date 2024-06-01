@@ -1,9 +1,9 @@
-import { graphql } from "msw";
+import { HttpResponse, graphql } from "msw";
 import data from "../../doc/data.json";
 
 export const handlers = [
   // @ts-ignore
-  graphql.query("hotels", (req, res, ctx) => {
+  graphql.query("GetHotels", (req, res, ctx) => {
     const { sortBy } = req.variables;
     let sortedHotels = data.results;
 
@@ -16,11 +16,10 @@ export const handlers = [
         (a, b) => a.offer.displayPrice.amount - b.offer.displayPrice.amount
       );
     }
-
-    return res(
-      ctx.data({
+    return HttpResponse.json({
+      data: {
         hotels: sortedHotels,
-      })
-    );
+      },
+    });
   }),
 ];
