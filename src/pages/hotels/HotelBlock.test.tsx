@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { HotelBlock } from "./HotelBlock";
 import { GetHotelsQuery, Hotel } from "../../generated/graphql";
+import { getTextContent } from "../../tools/testUtils";
 
 describe("HotelBlock", () => {
   const mockHotel = {
@@ -43,8 +44,8 @@ describe("HotelBlock", () => {
   });
 
   it("displays the correct hotel price and savings", () => {
-    render(<HotelBlock hotel={mockHotel} />);
-    expect(screen.getByText("200")).toBeInTheDocument();
+    const { container } = render(<HotelBlock hotel={mockHotel} />);
+    expect(getTextContent(container)).toContain("$200");
     expect(screen.getByText("Save $50~")).toBeInTheDocument();
   });
 });
