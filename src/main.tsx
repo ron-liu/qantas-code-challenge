@@ -14,9 +14,13 @@ async function enableMocking(): Promise<unknown> {
   // }
 
   const { worker } = await import("./mocks/browser.js");
+  const baseUrl = process.env.BASE_URL || "/";
 
   return worker.start({
     onUnhandledRequest: "bypass",
+    serviceWorker: {
+      url: `${baseUrl}mockServiceWorker.js`,
+    },
   });
 }
 
