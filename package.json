@@ -11,7 +11,8 @@
     "serve": "npx serve -s dist",
     "codegen": "graphql-codegen",
     "test": "vitest",
-    "deploy": " cross-env BASE_URL=/qantas-code-challenge npm run build && gh-pages -d dist"
+    "predepliy": "cross-env BASE_URL=/qantas-code-challenge/ npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@apollo/client": "^3.10.4",
