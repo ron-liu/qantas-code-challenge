@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { HotelBlock } from "./HotelBlock";
-import { GetHotelsQuery, Hotel } from "../../generated/graphql";
+import { GetHotelsQuery } from "../../generated/graphql";
 import { getTextContent } from "../../tools/testUtils";
 
 describe("HotelBlock", () => {

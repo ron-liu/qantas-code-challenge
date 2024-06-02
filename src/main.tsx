@@ -7,15 +7,14 @@ import App from "./App.tsx";
 import client from "./tools/apollo-client.ts";
 import theme from "./theme.ts";
 
-async function enableMocking() {
-  if (process.env.NODE_ENV !== "development") {
-    return;
-  }
+async function enableMocking(): Promise<unknown> {
+  // Enable mocking even in production
+  // if (process.env.NODE_ENV !== "development") {
+  //   return;
+  // }
 
   const { worker } = await import("./mocks/browser.js");
 
-  // `worker.start()` returns a Promise that resolves
-  // once the Service Worker is up and ready to intercept requests.
   return worker.start({
     onUnhandledRequest: "bypass",
   });

@@ -4,7 +4,9 @@
 
 This project is a code challenge for Qantas Group Accommodation. The challenge is to build a feature that allows users to see a list of hotels that can be sorted by price. See more details on the [instructions](doc/instructions.md). Also see the [mockup page](doc/mockup.png) provided.
 
-## How to run the app
+## How to run the app locally
+
+### Running in development mode
 
 ```bash
 brew install pnpm   # if you don't have pnpm installed
@@ -13,6 +15,30 @@ brew install pnpm   # if you don't have pnpm installed
 ```bash
 pnpm install
 pnpm dev
+```
+
+### Running in production mode locally
+
+```bash
+pnpm build
+
+pnpm serve
+# or
+pnpm preview
+```
+
+## Development
+
+### Run the tests
+
+```bash
+pnpm test
+```
+
+### Auto generate typescript types from graphql queries and graphql schema
+
+```bash
+pnpm codegen
 ```
 
 ## User Story: Implement Hotel Sorting Feature on Qantas Hotels Search Page
@@ -36,17 +62,66 @@ As a user of Qantas Hotels I would like to see a list of hotels that can be sort
 
 ## Approach
 
-I am about to use `react` and `graphql` to build this feature with the following tools / packages:
+Overall, I built this solution using `react`, `graphql` and `chakra ui`, and implemented the responsive layout using `grid` and `flex`. The following are the details:
 
+### GraphQL
+
+I choose to use `graphql` instead of `REST API`, because:
+
+- show my knowledge of graphql since Qantas is using graphql, since Qantas is using graphql
+- Though it will be a bit overkill and a bit complex to setup, it is not too much
+  - Need to write graphql schema but save time for typescript types via graphql-codegen
+  - Need to introduce apollo but can leave `react-query` out
+
+Under the hood,
+
+- I created a graphql schema to define the hotel data structure, and created a query document to fetch the data. - I use `graphql-codegen` to generate typescript types from the graphql schema and the graphql queries.
+- I used `msw` to mock the graphql server and implemented the sorting functionality in the graphql server.
+- I used `apollo-client` to fetch the data from the mocked graphql server.
+- I used `MockedProvider` from `@apollo/client` to mock the graphql client in the test.
+
+### Chakra UI
+
+I used `chakra-ui` for styling, because:
+
+- It is a popular library for styling in react
+- It provides a lot of utility functions that can be used to style the components easily
+- It allow me to create customised design system easily
+
+### Layout
+
+I used `flex` to layout the page, and used `grid` to layout the hotel block.
+
+The reason I used `grid` to layout the hotel block is because:
+
+- It is mentioned in the non-functional requirements that the application should be compatible with modern browsers, and `grid` is well supported in modern browsers.
+- Using `grid` layout will make it easier to create a responsive layout for different screen sizes.
+- To demonstrate my knowledge of using the `grid` layout for better control over the hotel block layout.
+
+### Testing
+
+I used `vitest` and `react-testing-library` for testing. `vitest` is a equivalent of `jest` for `vite`, and it is compatible with `jest` well. I used `vitest` because it is the recommended testing framework for `vite`, and it is super fast.
+
+### vite & pnpm
+
+I used `vite` and `pnpm` for package management. I used `vite` because it is a modern build tool that is fast and easy to use. I used `pnpm` because it is a fast and efficient package manager that is recommended by `vite`.
+
+## Tools / Packages
+
+- `react`
 - `pnpm` for package management
 - `vite` for react
 - `vitest` and `react-testing-library` for testing
 - `msw` for mocking Graphql requests
-- `graphql-codegen` for generating types from graphql queries
 - `apollo-client` for fetching data from the mocked graphql server
+- `graphql-codegen` for generating types from graphql queries
 - `chakra-ui` for styling
-- Use `flex` to layout the page, and use `grid` to display the hotel data
+- Use `flex` to layout the page, and use `grid` to layout the hotel block
 - `prettier` and `eslint` for code formatting and linting
+
+## Notes
+
+- Put original vite readme in `doc/original-vite-readme.md`
 
 ## Tasks
 
@@ -66,15 +141,5 @@ I am about to use `react` and `graphql` to build this feature with the following
   - [x] Support mobile design
   - [x] improve suspense fallback
 - [x] Implement the sorting functionality
-
-## Trade-offs
-
-- I use graphql instead of REST API
-  - Show my knowledge of graphql since Qantas is using graphql
-  - A bit complex but not too much
-    - Need to write graphql schema but save time for typescript types via graphql-codegen
-    - Need to introduce apollo but can leave `react-query` out
-
-## Notes
-
-- Put original vite readme in `doc/original-vite-readme.md`
+- [x] Finalise readme
+- [ ] deploy to github pages
