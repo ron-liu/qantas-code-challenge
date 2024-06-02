@@ -52,13 +52,7 @@ const HotelImage: React.FC<{
   promotionTitle: string;
 }> = ({ previewImage, promotionTitle }) => (
   <>
-    <Image
-      src={`${previewImage.url}=${Math.random()}`}
-      alt={previewImage.caption}
-      objectFit="cover"
-      width="100%"
-      height="100%"
-    />
+    <Image src={previewImage.url} alt={previewImage.caption} objectFit="cover" width="100%" height="100%" />
     <Text
       fontSize="sm"
       fontWeight="semibold"
