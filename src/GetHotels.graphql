@@ -5,13 +5,29 @@ query GetHotels($sortBy: SortBy) {
       title
       rating {
         ratingValue
+        ratingType
       }
+      previewImage {
+        url
+        caption
+      }
+      address
     }
     offer {
       name
       displayPrice {
         amount
         currency
+      }
+      savings {
+        amount
+        currency
+      }
+      cancellationOption {
+        cancellationType
+      }
+      promotion {
+        title
       }
     }
   }

@@ -1,5 +1,5 @@
 type Query {
-  hotels(sortBy: SortBy): [Hotel]
+  hotels(sortBy: SortBy): [Hotel!]
 }
 
 enum SortBy {
@@ -8,53 +8,53 @@ enum SortBy {
 }
 
 type Hotel {
-  id: String
-  property: Property
-  offer: Offer
+  id: ID!
+  property: HotelProperty!
+  offer: HotelOffer!
 }
 
-type Property {
-  propertyId: String
-  title: String
-  address: [String]
-  previewImage: PreviewImage
-  rating: Rating
+type HotelProperty {
+  propertyId: ID!
+  title: String!
+  address: [String!]!
+  previewImage: HotelImage!
+  rating: HotelRating!
 }
 
-type PreviewImage {
-  url: String
-  caption: String
-  imageType: String
+type HotelImage {
+  url: String!
+  caption: String!
+  imageType: String!
 }
 
-type Rating {
-  ratingValue: Float
-  ratingType: String
+enum RatingType {
+  self
+  star
 }
 
-type Offer {
-  promotion: Promotion
-  name: String
-  displayPrice: DisplayPrice
-  savings: Savings
-  cancellationOption: CancellationOption
+type HotelRating {
+  ratingValue: Float!
+  ratingType: RatingType!
 }
 
-type Promotion {
-  title: String
-  type: String
+type HotelOffer {
+  promotion: HotelPromotion!
+  name: String!
+  displayPrice: HotelPrice!
+  savings: HotelPrice
+  cancellationOption: HotelCancellationOption!
 }
 
-type DisplayPrice {
-  amount: Float
-  currency: String
+type HotelPromotion {
+  title: String!
+  type: String!
 }
 
-type Savings {
-  amount: Float
-  currency: String
+type HotelPrice {
+  amount: Float!
+  currency: String!
 }
 
-type CancellationOption {
-  cancellationType: String
+type HotelCancellationOption {
+  cancellationType: String!
 }

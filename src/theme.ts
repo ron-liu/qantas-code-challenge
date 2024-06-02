@@ -1,12 +1,10 @@
-import { extendBaseTheme, theme as chakraTheme } from "@chakra-ui/react";
-const { Select } = chakraTheme.components;
+import { extendTheme } from "@chakra-ui/react";
 
-const theme = extendBaseTheme({
+const theme = extendTheme({
   colors: {
     darkGrey: "#272727",
-  },
-  components: {
-    Select,
+    brand: "#BE4556",
+    brand2: "#6a9282",
   },
 });
 

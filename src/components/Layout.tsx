@@ -1,10 +1,10 @@
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Flex } from "@chakra-ui/react";
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <Container centerContent bg="darkGrey">
+    <Flex bg="darkGrey" justifyContent="center">
       <Box
         maxWidth="1200px"
         width="100%"
@@ -15,6 +15,6 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
       >
         {children}
       </Box>
-    </Container>
+    </Flex>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ChakraBaseProvider } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import { ApolloProvider } from "@apollo/client/react";
 
 import App from "./App.tsx";
@@ -25,9 +25,9 @@ enableMocking().then(() => {
   ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
       <ApolloProvider client={client}>
-        <ChakraBaseProvider theme={theme}>
+        <ChakraProvider theme={theme}>
           <App />
-        </ChakraBaseProvider>
+        </ChakraProvider>
       </ApolloProvider>
     </React.StrictMode>
   );
