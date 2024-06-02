@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This project is a code challenge for Qantas Group Accommodation. The challenge is to build a feature that allows users to see a list of hotels that can be sorted by price. See more details on the [instructions](doc/instructions.md). Also see the [mockup page](doc/mockup.png) provided.
+This project is a code challenge for Qantas Group Accommodation. The challenge is to build a feature that allows users to see a list of hotels that can be sorted by price. See more details on the [instructions](doc/instructions.md). Also see the [mockup page](doc/page-mock.jpg) provided.
 
 ## Live Demo
 
