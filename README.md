@@ -58,14 +58,14 @@ I am about to use `react` and `graphql` to build this feature with the following
 - [x] Implement the page layout
   - [x] For desktop / tablet: put the content in the center with 1200px width
   - [x] For mobile: put the content in the center with 100% width
-- [ ] Implement the UI to display the hotel data
+- [x] Implement the UI to display the hotel data
   - [x] Create rating component to display the ratings
   - [x] Use grid to display the hotel data
   - [x] Free cancellation badge
   - [x] Exclusive deal badge
-  - [ ] Support mobile design
+  - [x] Support mobile design
+  - [x] improve suspense fallback
 - [x] Implement the sorting functionality
-- [ ] fallback
 
 ## Trade-offs
 

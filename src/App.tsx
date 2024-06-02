@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
 import { Layout } from "./components/Layout";
-import { Hotels } from "./pages/hotels/Hotels";
+import { Hotels } from "./pages/hotels/HotelsPage";
 
 function App() {
   return (

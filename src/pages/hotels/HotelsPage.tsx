@@ -1,11 +1,14 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { VStack } from "@chakra-ui/react";
+
 import { Header } from "./Header";
 import { Search } from "./Search";
-import { VStack } from "@chakra-ui/react";
 
 export const Hotels: React.FC = () => (
   <VStack spacing={8} alignItems="flex-start">
     <Header />
-    <Search />
+    <Suspense fallback={<div>Loading...</div>}>
+      <Search />
+    </Suspense>
   </VStack>
 );
