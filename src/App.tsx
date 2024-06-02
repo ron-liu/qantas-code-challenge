@@ -1,13 +1,13 @@
 import { Suspense } from "react";
 
 import { Layout } from "./components/Layout";
-import { Hotels } from "./pages/hotels/HotelsPage";
+import { HotelsPage } from "./pages/hotels/HotelsPage";
 
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Layout>
-        <Hotels />
+        <HotelsPage />
       </Layout>
     </Suspense>
   );

@@ -14,7 +14,6 @@ export const Rating: React.FC<RatingProps> = ({ ratingType, ratingValue }) => {
     <HStack>
       {Array.from({ length: 5 }).map((_, index) => {
         const icon = ratingValue >= index + 1 ? icons.full : ratingValue >= index + 0.5 ? icons.half : icons.empty;
-        console.log(icon);
         return (
           <Icon
             boxSize={4}
