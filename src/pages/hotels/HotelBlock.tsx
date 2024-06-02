@@ -63,6 +63,7 @@ const HotelImage: React.FC<{
       alt={previewImage.caption}
       objectFit="cover"
       width="100%"
+      aspectRatio={145 / 125}
       height={{ base: "auto", sm: "100%" }}
     />
     <Text

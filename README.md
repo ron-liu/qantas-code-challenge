@@ -146,4 +146,4 @@ I used `vite` and `pnpm` for package management. I used `vite` because it is a m
   - [x] improve suspense fallback
 - [x] Implement the sorting functionality
 - [x] Finalise readme
-- [ ] deploy to github pages
+- [x] deploy to vercel
