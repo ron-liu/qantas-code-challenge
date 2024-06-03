@@ -2,8 +2,12 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+// Read the base URL from the environment variable or use '/' as default
+const baseUrl = process.env.BASE_URL || "/";
+
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: baseUrl,
   plugins: [react()],
   server: {
     fs: {
